@@ -1,22 +1,25 @@
 package com.example.rest_students.model;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name="Students")
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+@ToString
 public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Column
     private String name;
 
-    public Integer getId() {
-        return id;
-    }
+    @Column
+    private String surname;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
